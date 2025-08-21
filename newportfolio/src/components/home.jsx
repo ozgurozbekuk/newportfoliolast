@@ -30,12 +30,12 @@ const ME = {
 // Categories
 const CATEGORIES = [
   "All",
+  "Real Life",
   "React",
   "Next.js",
   "Fullstack",
   "WordPress",
-  "Python",
-  "Real Life",
+  "AI",
 ];
 
 export default function PortfolioApp() {
@@ -44,7 +44,7 @@ export default function PortfolioApp() {
 
   const filteredProjects = useMemo(() => {
     return PROJECTS.filter(
-      (p) => activeCategory === "All" || p.category === activeCategory
+      (p) => activeCategory === "All" || p.categories?.includes(activeCategory)
     );
   }, [activeCategory]);
 
@@ -186,8 +186,17 @@ export default function PortfolioApp() {
 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <span className="inline-flex items-center text-xs font-medium rounded-full border border-slate-300 px-3 py-1 text-slate-600">
-                      {p.category}
+                    <span className="inline-flex items-center text-xs font-medium px-3 py-1 text-slate-600">
+                      <ul className="flex flex-wrap gap-2 pt-1">
+                        {p.categories.map((c) => (
+                          <li
+                            key={c}
+                            className="text-xs font-medium rounded-full border border-slate-300 bg-white px-3 py-1"
+                          >
+                            {c}
+                          </li>
+                        ))}
+                      </ul>
                     </span>
                   </div>
                   <h3 className="text-2xl md:text-3xl font-medium tracking-tight">
