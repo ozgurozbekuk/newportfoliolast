@@ -43,6 +43,17 @@ const PROJECTS = [
     github: "https://github.com/ozgurozbekuk/",
     demo: "https://entrumservice.at/",
   },
+  {
+    title: "An AI-powered full-stack note-taking app",
+    categories: ["Fullstack", "React","AI"],
+    description:
+      "An AI-powered full-stack note-taking app built with React, Tailwind CSS, DaisyUI, Node.js, and MongoDB. It combines a clean UI with robust back-end architecture and intelligent features for smarter note management.",
+    tech: ["React","Nodejs", "MongoDB", "Tailwind", "Daisyui"],
+    image:
+      "images/thinkboard.png",
+    github: "https://github.com/ozgurozbekuk/mern-thinkboard",
+    demo: "https://mern-thinkboard-vi0t.onrender.com/",
+  },
 ];
 
 export default PROJECTS;
